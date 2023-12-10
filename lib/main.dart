@@ -1,4 +1,6 @@
-import 'package:democracy_app_sample/pages/drawer_screen.dart';
+import 'package:democracy_app_sample/pages/drawer_menu_screen.dart';
+import 'package:democracy_app_sample/pages/dropdown_screen.dart';
+import 'package:democracy_app_sample/pages/edit_profile_screen.dart';
 import 'package:democracy_app_sample/pages/profile_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -23,10 +25,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
-            primaryColor: Colors.blueAccent,
-            brightness: Brightness.light,
+            primaryColor: Color.fromARGB(255, 166, 216, 0),
           ),
-          home: ProfileScreen(),
+          home: DropdownScreen(),
         );
       },
     );

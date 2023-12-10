@@ -1,13 +1,15 @@
-import 'package:democracy_app_sample/pages/drawer_screen.dart';
+import 'package:democracy_app_sample/pages/drawer_menu_screen.dart';
 import 'package:democracy_app_sample/theme/colors.dart';
 import 'package:democracy_app_sample/utils/constants.dart';
 import 'package:democracy_app_sample/widget/custiom_app_bar.dart';
+import 'package:democracy_app_sample/widget/drawer_widgets/devider.dart';
+import 'package:democracy_app_sample/widget/drawer_widgets/drawer_list_tiles.dart';
 import 'package:democracy_app_sample/widget/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class ProfileScreen extends StatelessWidget {
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,32 +66,33 @@ class ProfileScreen extends StatelessWidget {
     return Expanded(
       child: Container(
         padding: const EdgeInsets.only(left: 24, right: 24),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Personal
-            const SizedBox(height: 36),
-            const TextDesign(
+            SizedBox(height: 36),
+            TextDesign(
               text: "Personal",
               fontSize: 12,
               textColor: subTextColor,
               fontWeight: FontWeight.w500,
             ),
-            DrawerScreen().buildProfileTags(profileIc, "Profile", Colors.white),
-            DrawerScreen().buildDivider(),
-            DrawerScreen()
-                .buildProfileTags(locationIc, "Address", Colors.white),
-            const SizedBox(height: 36),
-            const TextDesign(
+            DrawerListTiles(
+                ic: profileIc, tags: "Profile", color: Colors.white),
+            DeviderLine(),
+            DrawerListTiles(
+                ic: locationIc, tags: "Address", color: Colors.white),
+            SizedBox(height: 36),
+            TextDesign(
               text: "Other",
               fontSize: 12,
               textColor: subTextColor,
               fontWeight: FontWeight.w500,
             ),
-            DrawerScreen()
-                .buildProfileTags(deleteAcIc, "Delete Account", Colors.red),
-            DrawerScreen().buildDivider(),
-            DrawerScreen().buildProfileTags(logoutIc, "Logout", Colors.white),
+            DrawerListTiles(
+                ic: deleteAcIc, tags: "Delete Account", color: Colors.red),
+            DeviderLine(),
+            DrawerListTiles(ic: logoutIc, tags: "Logout", color: Colors.white),
           ],
         ),
       ),

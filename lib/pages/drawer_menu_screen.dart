@@ -1,12 +1,14 @@
 import 'package:democracy_app_sample/theme/colors.dart';
 import 'package:democracy_app_sample/utils/constants.dart';
+import 'package:democracy_app_sample/widget/drawer_widgets/devider.dart';
+import 'package:democracy_app_sample/widget/drawer_widgets/drawer_list_tiles.dart';
 import 'package:democracy_app_sample/widget/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class DrawerScreen extends StatelessWidget {
-  DrawerScreen({super.key});
+  const DrawerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +97,7 @@ class DrawerScreen extends StatelessWidget {
     );
   }
 
-  //Profile Tags
+  //Profile ListTiles
 
   Widget buildProfileInfo() {
     return Expanded(
@@ -114,10 +116,13 @@ class DrawerScreen extends StatelessWidget {
                 textColor: subTextColor,
                 fontWeight: FontWeight.w500,
               ),
-              buildProfileTags(profileIc, "Profile", Colors.white),
-              buildDivider(),
-              buildProfileTags(
-                  enrolledContestsIc, "Enrolled Contests", Colors.white),
+              const DrawerListTiles(
+                  ic: profileIc, tags: "Profile", color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: enrolledContestsIc,
+                  tags: "Enrolled Contests",
+                  color: Colors.white),
               const SizedBox(height: 24),
               //Other
               const TextDesign(
@@ -126,19 +131,29 @@ class DrawerScreen extends StatelessWidget {
                 textColor: subTextColor,
                 fontWeight: FontWeight.w500,
               ),
-              buildProfileTags(aboutUsIc, "About us", Colors.white),
-              buildDivider(),
-              buildProfileTags(contactUsIc, "Contact us", Colors.white),
-              buildDivider(),
-              buildProfileTags(notificationSettingsIc, "Notification Settings",
-                  Colors.white),
-              buildDivider(),
-              buildProfileTags(shareTheAppIc, "Share the app", Colors.white),
-              buildDivider(),
-              buildProfileTags(faqIc, "FAQ’s", Colors.white),
-              buildDivider(),
-              buildProfileTags(
-                  privacyPolicyIc, "T&C and Privacy Policy", Colors.white),
+              const DrawerListTiles(
+                  ic: aboutUsIc, tags: "About us", color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: contactUsIc, tags: "Contact us", color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: notificationSettingsIc,
+                  tags: "Notification Settings",
+                  color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: shareTheAppIc,
+                  tags: "Share the app",
+                  color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: faqIc, tags: "FAQ’s", color: Colors.white),
+              const DeviderLine(),
+              const DrawerListTiles(
+                  ic: privacyPolicyIc,
+                  tags: "T&C and Privacy Policy",
+                  color: Colors.white),
               const SizedBox(height: 24),
               //Action
               const TextDesign(
@@ -147,7 +162,8 @@ class DrawerScreen extends StatelessWidget {
                 textColor: subTextColor,
                 fontWeight: FontWeight.w500,
               ),
-              buildProfileTags(logoutIc, "Logout", Colors.white),
+              const DrawerListTiles(
+                  ic: logoutIc, tags: "Logout", color: Colors.white),
               // Version Details
               const SizedBox(height: 88),
               Container(
@@ -165,45 +181,6 @@ class DrawerScreen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  Widget buildProfileTags(String ic, String tags, Color? color) {
-    return Container(
-      margin: const EdgeInsets.only(top: 16, bottom: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              SvgPicture.asset(
-                ic,
-                fit: BoxFit.cover,
-              ),
-              const SizedBox(width: 16),
-              TextDesign(
-                text: tags,
-                fontSize: 16,
-                textColor: color,
-                fontWeight: FontWeight.w500,
-              ),
-            ],
-          ),
-          Icon(
-            Icons.arrow_forward_ios,
-            color: color,
-            size: 14,
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildDivider() {
-    return const Divider(
-      height: 1,
-      color: dividerColor,
     );
   }
 }
