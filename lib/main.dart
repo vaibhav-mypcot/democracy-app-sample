@@ -1,4 +1,5 @@
 import 'package:democracy_app_sample/pages/drawer_screen.dart';
+import 'package:democracy_app_sample/pages/profile_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
             primaryColor: Colors.blueAccent,
             brightness: Brightness.light,
           ),
-          home: DrawerScreen(),
+          home: ProfileScreen(),
         );
       },
     );

@@ -12,3 +12,5 @@ const String shareTheAppIc = "assets/drawer_ic/share_ic.svg";
 const String faqIc = "assets/drawer_ic/faq_ic.svg";
 const String privacyPolicyIc = "assets/drawer_ic/tnc_ic.svg";
 const String logoutIc = "assets/drawer_ic/logout_ic.svg";
+const String locationIc = "assets/drawer_ic/location_ic.svg";
+const String deleteAcIc = "assets/drawer_ic/delete_ac_ic.svg";

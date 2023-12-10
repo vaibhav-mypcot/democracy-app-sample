@@ -18,11 +18,13 @@ class TextDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,
-        style: GoogleFonts.poppins(
-          fontSize: fontSize.sp,
-          fontWeight: fontWeight,
-          color: textColor,
-        ));
+    return Text(
+      text,
+      style: GoogleFonts.poppins(
+        fontSize: fontSize.sp,
+        fontWeight: fontWeight,
+        color: textColor,
+      ),
+    );
   }
 }
