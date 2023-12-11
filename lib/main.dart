@@ -2,6 +2,7 @@ import 'package:democracy_app_sample/pages/drawer_menu_screen.dart';
 import 'package:democracy_app_sample/pages/dropdown_screen.dart';
 import 'package:democracy_app_sample/pages/edit_profile_screen.dart';
 import 'package:democracy_app_sample/pages/profile_screen.dart';
+import 'package:democracy_app_sample/widget/bottom_popup.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primaryColor: Color.fromARGB(255, 166, 216, 0),
           ),
-          home: DropdownScreen(),
+          home: const BottomPopup(),
         );
       },
     );

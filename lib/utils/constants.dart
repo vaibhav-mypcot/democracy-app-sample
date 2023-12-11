@@ -19,3 +19,4 @@ const String blankIC = "assets/drawer_ic/blank_ic.svg";
 const String presentIC = "assets/drawer_ic/present_ic.svg";
 const String calendarIC = "assets/drawer_ic/calendar_ic.svg";
 const String genderIC = "assets/drawer_ic/gender_ic.svg";
+const String userBlockIC = "assets/drawer_ic/user_block_ic.svg";
