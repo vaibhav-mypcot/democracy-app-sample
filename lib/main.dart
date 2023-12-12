@@ -2,10 +2,13 @@ import 'package:democracy_app_sample/pages/drawer_menu_screen.dart';
 import 'package:democracy_app_sample/pages/dropdown_screen.dart';
 import 'package:democracy_app_sample/pages/edit_profile_screen.dart';
 import 'package:democracy_app_sample/pages/profile_screen.dart';
+import 'package:democracy_app_sample/pages/text_screen/text_binding.dart';
+import 'package:democracy_app_sample/pages/text_screen/text_screen.dart';
 import 'package:democracy_app_sample/widget/bottom_popup.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,13 +25,14 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       designSize: Size(360, 800),
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primaryColor: Color.fromARGB(255, 166, 216, 0),
           ),
-          home: const BottomPopup(),
+          initialBinding: TextBinding(),
+          home: TextScreen(),
         );
       },
     );
